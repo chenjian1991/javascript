@@ -9,4 +9,28 @@
 <body>
     
 </body>
+<script>
+    function test(){
+    var message = "hi"; // 局部变量
+    console.log(message)
+    }
+test();
+console.log(message)// Uncaught ReferenceError: message is not defined 那么这个变量在函数退出后就会被销毁
+
+
+
+function test(){
+    message = "hi"; // 全局变量 
+    }
+test();
+console.log(message); // "hi" message 就成了全局变量,只要调用过一次 test()函 数，这个变量就有了定义，就可以在函数外部的任何地方被访问到
+
+typeof(null) //object
+//因为特殊值 null 被认为是一个空的对象引用
+var car = null;
+//只要意在保存对象的变量还没有真正保存对象，就应该明确地让该变量保存 null 值
+//可以对任何数据类型的值调用 Boolean()函数，而且总会返回一个 Boolean 值
+        var message = "Hello world!";
+     var messageAsBoolean = Boolean(message);
+</script>
 </html>
